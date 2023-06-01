@@ -506,3 +506,7 @@ p {
   height: 42px !important;
   line-height: 18px !important;
 }
+
+.trashIcon {
+  font-size: 26px;
+}

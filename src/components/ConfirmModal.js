@@ -1,21 +1,33 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useGlobalContext } from "../context/context";
 
-const ConfirmModal = ({ message, onConfirm, onCancel, showModal }) => {
+const ConfirmModal = ({ onConfirm }) => {
+  const { showModal, setShowModal, confirmMsg } = useGlobalContext();
+
+  const closeHandle = () => {
+    setShowModal(false);
+  };
+
   return (
-    <Modal
-      show={showModal}
-      style={{
-        border: "3px solid #ff0000",
-      }}
-    >
-      <div className="modal-content">
-        modal
-        <p>{message}</p>
-        <button onClick={onConfirm}>Conferma</button>
-        <button onClick={onCancel}>Annulla</button>
-      </div>
+    <Modal show={showModal}>
+      <Modal.Header closeButton onClick={closeHandle}>
+        <Modal.Title>Modal title</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        <p>{confirmMsg}</p>
+      </Modal.Body>
+
+      <Modal.Footer>
+        <Button variant="secondary" onClick={closeHandle}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={onConfirm}>
+          Ok
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };

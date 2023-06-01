@@ -3,6 +3,7 @@ import Cart from "./components/Cart";
 import TotalBox from "./components/TotalBox";
 import Loading from "./components/Loading";
 import { useGlobalContext } from "./context/context";
+
 function App() {
   const { isLoading, total, products } = useGlobalContext();
   if (isLoading) {
@@ -21,8 +22,10 @@ function App() {
       {products.length > 0 ? (
         <Cart />
       ) : (
-        <div className="center-item">
-          <h4>Nessun prodotto nel carrello</h4>
+        <div className="center-item text-center">
+          <h3>The cart is empty</h3>
+          <br />
+          <h4>Reload page to view cart</h4>
         </div>
       )}
       {total > 0 && <TotalBox />}

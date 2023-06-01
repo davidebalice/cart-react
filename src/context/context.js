@@ -28,7 +28,10 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(0);
+  const [typeDelete, setTypeDelete] = useState(1);
+  const [confirmMsg, setConfirmMsg] = useState("");
 
   const deleteItem = (id) => {
     return dispatch({ type: DELETE_ITEM, payload: id });
@@ -74,6 +77,13 @@ const AppProvider = ({ children }) => {
         dimQty,
         deleteAll,
         showModal,
+        setShowModal,
+        selectedId,
+        setSelectedId,
+        typeDelete,
+        setTypeDelete,
+        confirmMsg,
+        setConfirmMsg,
       }}
     >
       {children}

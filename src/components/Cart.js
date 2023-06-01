@@ -3,24 +3,50 @@ import { MdRemoveShoppingCart } from "react-icons/md";
 import CartItem from "./CartItem";
 import ConfirmModal from "./ConfirmModal";
 import { useGlobalContext } from "../context/context";
+
 const Cart = () => {
-  const { products, deleteAll, showModal } = useGlobalContext();
-  console.log('showModal');
-  console.log(showModal);
+  const {
+    products,
+    deleteAll,
+    showModal,
+    setShowModal,
+    deleteItem,
+    selectedId,
+    typeDelete,
+    setTypeDelete,
+    confirmMsg,
+    setConfirmMsg,
+  } = useGlobalContext();
+
+  const deleteAllHandle = () => {
+    setConfirmMsg("Delete all items in cart?");
+    setTypeDelete(2);
+    setShowModal(true);
+  };
+
+  const confirmHandle = () => {
+    if (typeDelete === 1) {
+      deleteItem(selectedId);
+      setShowModal(false);
+    } else if (typeDelete === 2) {
+      setShowModal(false);
+      return deleteAll();
+    }
+  };
+
   return (
     <section className="section-center" style={{ marginTop: "2rem" }}>
       <ConfirmModal
         showModal={showModal}
-        message="ciao"
-        onConfirm={deleteAll}
-        onCancel={deleteAll}
+        msg={confirmMsg}
+        onConfirm={confirmHandle}
       />
       <div className="cart-info">
         <h6>Item</h6>
-        <h6 className="prd-name">Nome</h6>
+        <h6 className="prd-name">Description</h6>
         <h6>Qty</h6>
-        <h6>Prezzo</h6>
-        <button className="btn icon-btn" onClick={deleteAll}>
+        <h6>Price</h6>
+        <button className="btn icon-btn" onClick={deleteAllHandle}>
           <MdRemoveShoppingCart className="icon minus-icon" />
         </button>
       </div>

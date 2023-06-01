@@ -5,11 +5,21 @@ import { useGlobalContext } from "../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
-  const { deleteItem, addQty, dimQty } = useGlobalContext();
+  const {
+    addQty,
+    dimQty,
+    setShowModal,
+    setSelectedId,
+    setTypeDelete,
+    setConfirmMsg,
+  } = useGlobalContext();
 
   const diminuisciQty = (id) => {
     if (qty - 1 <= 0) {
-      deleteItem(id);
+      setConfirmMsg("Delete this Item?");
+      setTypeDelete(1);
+      setShowModal(true);
+      setSelectedId(id);
     } else {
       return dimQty(id);
     }
@@ -20,6 +30,12 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
       return;
     }
     return addQty(id);
+  };
+
+  const deleteHandle = (id) => {
+    setTypeDelete(1);
+    setSelectedId(id);
+    setShowModal(id);
   };
 
   return (
@@ -42,8 +58,8 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
         </ButtonGroup>
       </div>
       <p>{price} €</p>
-      <button className="btn icon-btn" onClick={() => deleteItem(_id)}>
-        <MdDelete className=" icon minus-icon" />
+      <button className="btn icon-btn" onClick={() => deleteHandle(_id)}>
+        <MdDelete className="icon minus-icon trashIcon" />
       </button>
     </article>
   );

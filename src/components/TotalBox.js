@@ -7,7 +7,7 @@ const TotalBox = () => {
     <section className="total-section section-center">
       <div className="card">
         <header className="card-header">
-          <h4> Carrello </h4>
+          <h4> Cart </h4>
         </header>
         <hr />
         <div className="card-content">
