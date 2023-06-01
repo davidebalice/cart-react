@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
+import TotalBox from "./components/TotalBox";
+import Loading from "./components/Loading";
+import { useGlobalContext } from "./context/context";
 function App() {
+  const { isLoading, total, products } = useGlobalContext();
+  if (isLoading) {
+    return (
+      <div>
+        <Navbar />
+        <div className="center-item">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      {products.length > 0 ? (
+        <Cart />
+      ) : (
+        <div className="center-item">
+          <h4>Nessun prodotto nel carrello</h4>
+        </div>
+      )}
+      {total > 0 && <TotalBox />}
     </div>
   );
 }
