@@ -3,9 +3,8 @@ import axios from "axios";
 import reducer from "./reducer";
 
 import {
-  DATA_FETCHING_STARTED,
-  DATA_FETCHING_FAILED,
-  DATA_FETCHING_SUCCESS,
+  SHOW_CART,
+  ADD_CART,
   DELETE_ITEM,
   AUMENTA_QTY,
   DIMINUISCI_QTY,
@@ -16,11 +15,9 @@ import {
 
 const AppContext = React.createContext();
 
-const url = "https://react--course-api.herokuapp.com/api/v1/data/cart";
-
 const initialState = {
-  products: [],
-  isLoading: true,
+  cart: [],
+  isLoading: false,
   isError: false,
   total: 0,
   itemCounter: 0,
@@ -37,6 +34,10 @@ const AppProvider = ({ children }) => {
     return dispatch({ type: DELETE_ITEM, payload: id });
   };
 
+  const addCart = (item) => {
+    return dispatch({ type: ADD_CART, payload: item });
+  };
+
   const addQty = (id) => {
     return dispatch({ type: AUMENTA_QTY, payload: id });
   };
@@ -48,31 +49,32 @@ const AppProvider = ({ children }) => {
   const deleteAll = () => {
     return dispatch({ type: SVUOTA_CARRELLO });
   };
+  /*
   useEffect(() => {
-    (async () => {
-      dispatch({ type: DATA_FETCHING_STARTED });
-      try {
-        const response = await axios.get(url);
-        dispatch({
-          type: DATA_FETCHING_SUCCESS,
-          payload: response.data.data,
-        });
-      } catch (err) {
-        dispatch({ type: DATA_FETCHING_FAILED });
-      }
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
+    dispatch({
+      type: SHOW_CART,
+      payload: state.cart,
+    });
     dispatch({ type: COSTO_TOTALE });
     dispatch({ type: CONTATORE });
-  }, [state.products]);
+  }, [state.cart]);
+*/
+
+  useEffect(() => {
+    dispatch({
+      type: SHOW_CART,
+      payload: state.cart,
+    });
+    //dispatch({ type: COSTO_TOTALE });
+    //dispatch({ type: CONTATORE });
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         deleteItem,
+        addCart,
         addQty,
         dimQty,
         deleteAll,

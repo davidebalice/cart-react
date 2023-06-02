@@ -1,6 +1,7 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import { useGlobalContext } from "../context/context";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { isLoading, itemCounter } = useGlobalContext();
@@ -8,13 +9,17 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <header className="nav-header">
-        <div className="nav-brand">
-          <h4>Cart Shop</h4>
-        </div>
-        <div className="nav-cart">
-          <HiShoppingCart className="icon nav-icon" />
-          {!isLoading && <div className="cart-counter">{itemCounter}</div>}
-        </div>
+        <NavLink to="/">
+          <div className="nav-brand">
+            <h4>Cart Shop</h4>
+          </div>
+        </NavLink>
+        <NavLink to="/cart">
+          <div className="nav-cart">
+            <HiShoppingCart className="icon nav-icon" />
+            {!isLoading && <div className="cart-counter">{itemCounter}</div>}
+          </div>{" "}
+        </NavLink>
       </header>
     </nav>
   );

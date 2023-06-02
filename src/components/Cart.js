@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context/context";
 
 const Cart = () => {
   const {
-    products,
+    cart,
     deleteAll,
     showModal,
     setShowModal,
@@ -52,7 +52,7 @@ const Cart = () => {
       </div>
       <hr />
       <section className="cart-section">
-        {products.map((el) => {
+        {cart.map((el) => {
           return <CartItem key={el._id} {...el} />;
         })}
       </section>

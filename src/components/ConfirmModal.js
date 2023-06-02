@@ -13,7 +13,7 @@ const ConfirmModal = ({ onConfirm }) => {
   return (
     <Modal show={showModal}>
       <Modal.Header closeButton onClick={closeHandle}>
-        <Modal.Title>Modal title</Modal.Title>
+        <Modal.Title></Modal.Title>
       </Modal.Header>
 
       <Modal.Body>

@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+
 const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
   const {
     addQty,
