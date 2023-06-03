@@ -49,16 +49,6 @@ const AppProvider = ({ children }) => {
   const deleteAll = () => {
     return dispatch({ type: SVUOTA_CARRELLO });
   };
-  /*
-  useEffect(() => {
-    dispatch({
-      type: SHOW_CART,
-      payload: state.cart,
-    });
-    dispatch({ type: COSTO_TOTALE });
-    dispatch({ type: CONTATORE });
-  }, [state.cart]);
-*/
 
   useEffect(() => {
     dispatch({

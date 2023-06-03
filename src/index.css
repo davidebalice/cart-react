@@ -178,7 +178,7 @@ p {
   display: -webkit-flex;
   display: -ms-flex;
   color: white;
-  padding: 1rem;
+  padding: 10px;
 }
 
 .nav-cart {
@@ -509,4 +509,9 @@ p {
 
 .trashIcon {
   font-size: 26px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
 }

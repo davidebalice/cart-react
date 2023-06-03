@@ -1,0 +1,30 @@
+.cardTitle {
+  min-height: 50px !important;
+}
+.cardText {
+  min-height: 90px !important;
+  font-size: 12px !important;
+}
+.cardButton {
+  text-transform: lowercase;
+}
+.cardPrice {
+  min-height: 40px !important;
+  font-size: 19px !important;
+  font-weight: 700;
+}
+.price {
+  font-size: 19px;
+}
+.decimal-part {
+  font-size: 13px;
+}
+.img {
+  border: 1px solid #f1f1f1;
+}
+.card {
+  transition: transform 0.1s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+}

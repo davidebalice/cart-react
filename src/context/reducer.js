@@ -15,10 +15,6 @@ const reducer = (state, action) => {
       ...state,
       isLoading: false,
       isError: false,
-      /*
-      cart: action.payload.map((el) => {
-        return { ...el };
-      }),*/
     };
   }
   if (action.type === ADD_CART) {
@@ -27,15 +23,18 @@ const reducer = (state, action) => {
     );
     if (existingItem) {
       state.cart.map((cart) =>
-        cart._id === action.payload._id ? { ...cart, qty: cart.qty + 1 } : cart
+        cart._id === action.payload._id ? { ...cart, qty: cart.qty++ } : cart
       );
     } else {
-      action.payload.qty = 1;
-      state.cart = [...state.cart, action.payload];
+      const newItem = { ...action.payload, qty: 1 };
+      state.cart = [...state.cart, newItem];
     }
 
     return {
       ...state,
+      itemCounter: state.cart.reduce((total, item) => {
+        return total + item.qty;
+      }, 0),
     };
   }
 

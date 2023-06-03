@@ -1,5 +1,6 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
+import logo from "../assets/logo_white.png";
 import { useGlobalContext } from "../context/context";
 import { NavLink } from "react-router-dom";
 
@@ -11,7 +12,7 @@ const Navbar = () => {
       <header className="nav-header">
         <NavLink to="/">
           <div className="nav-brand">
-            <h4>Cart Shop</h4>
+            <img src={logo} alt="DB logo" className="logo"/>
           </div>
         </NavLink>
         <NavLink to="/cart">
