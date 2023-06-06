@@ -7,6 +7,12 @@
 }
 .cardButton {
   text-transform: lowercase;
+  background: #3992c2;
+  transition: background 0.4s;
+  border: none !important;
+}
+.cardButton:hover {
+  background: #57a3cc;
 }
 .cardPrice {
   min-height: 40px !important;
@@ -26,5 +32,5 @@
   transition: transform 0.1s ease-in-out;
 }
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }

@@ -1,0 +1,58 @@
+.CartBottom {
+  background: #fff;
+  height: 64px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  box-shadow: -1px -3px 3px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: -1px -3px 3px 1px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: -1px -3px 3px 1px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  display: flex;
+  justify-content: end;
+}
+.cartIcon {
+  font-size: 30px !important;
+  color: #fff;
+}
+.cartButton {
+  color: #fff;
+  background: #3992c2;
+  margin-top: 8px;
+  margin-right: 8px;
+  width: 200px;
+  height: 44px;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  transition: background 0.4s;
+}
+.cartButton:hover {
+  background: #57a3cc;
+}
+.cartNum {
+  color: #3992c2;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  margin-left: auto;
+  border-radius: 4px;
+  font-weight: bold;
+  line-height: 28px;
+  text-decoration: none !important;
+  text-align: center;
+}
+.cartText {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none !important;
+  border: none;
+  margin-left: 15px !important;
+  line-height: 29px;
+}
+.NavLink {
+  text-decoration: none !important;
+}

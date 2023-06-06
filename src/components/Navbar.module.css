@@ -1,0 +1,21 @@
+.cartIcon {
+  font-size: 26px !important;
+  color: #fff;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+.cartNum {
+  color: #3992c2;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  margin-left: auto;
+  border-radius: 50px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+}
+.NavLink {
+  text-decoration: none !important;
+}
