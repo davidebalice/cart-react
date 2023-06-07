@@ -5,7 +5,7 @@ import ProductContainer from "../components/ProductContainer";
 import { useGlobalContext } from "../context/context";
 
 const Home = () => {
-  const { cart, itemCounter } = useGlobalContext();
+  const { itemCounter } = useGlobalContext();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -17,19 +17,8 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-
       {isVisible && <CartBottom />}
-
       <ProductContainer />
-      <p>cart</p>
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            {item.name} {item.qty}
-            <br />
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

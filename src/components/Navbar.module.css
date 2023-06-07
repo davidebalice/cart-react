@@ -19,3 +19,18 @@
 .NavLink {
   text-decoration: none !important;
 }
+.home {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.NavSx {
+  flex-wrap: nowrap !important;
+}
+.NavHome{
+  margin-top:14px;
+}
+.NavHome:hover{
+ color:#f1f1f1;
+}

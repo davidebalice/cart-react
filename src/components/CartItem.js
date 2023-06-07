@@ -15,7 +15,7 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
     setConfirmMsg,
   } = useGlobalContext();
 
-  const diminuisciQty = (id) => {
+  const decrease = (id) => {
     if (qty - 1 <= 0) {
       setConfirmMsg("Delete this Item?");
       setTypeDelete(1);
@@ -26,7 +26,7 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
     }
   };
 
-  const aggiungiQty = (id) => {
+  const add = (id) => {
     if (qty + 1 > countInStock) {
       return;
     }
@@ -47,13 +47,13 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
       <p className="prd-name">{name}</p>
       <div className="qty-selector">
         <ButtonGroup>
-          <Button className="plusButton" onClick={() => aggiungiQty(_id)}>
+          <Button className="plusButton" onClick={() => add(_id)}>
             <BiPlus className="icon" />
           </Button>
           <Button variant="white" className="qtyButton">
             <p> {qty} </p>
           </Button>
-          <Button className="plusButton" onClick={() => diminuisciQty(_id)}>
+          <Button className="plusButton" onClick={() => decrease(_id)}>
             <BiMinus className="icon minus-icon" />
           </Button>
         </ButtonGroup>

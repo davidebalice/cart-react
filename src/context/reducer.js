@@ -35,6 +35,9 @@ const reducer = (state, action) => {
       itemCounter: state.cart.reduce((total, item) => {
         return total + item.qty;
       }, 0),
+      total: state.cart.reduce((total, item) => {
+        return total + item.price * item.qty;
+      }, 0),
     };
   }
 
@@ -44,34 +47,63 @@ const reducer = (state, action) => {
       cart: state.cart.filter((el) => el._id !== action.payload),
     };
   }
+
   if (action.type === AUMENTA_QTY) {
+    const updatedCart = state.cart.map((el) => {
+      if (action.payload === el._id) {
+        return {
+          ...el,
+          qty: el.qty + 1,
+        };
+      }
+      return el;
+    });
+
+    const itemCounter = updatedCart.reduce(
+      (total, item) => total + item.qty,
+      0
+    );
+    const total = updatedCart.reduce(
+      (total, item) => total + item.price * item.qty,
+      0
+    );
+
     return {
       ...state,
-      cart: state.cart.map((el) => {
-        if (action.payload === el._id) {
-          return {
-            ...el,
-            qty: el.qty + 1,
-          };
-        }
-        return { ...el };
-      }),
+      cart: updatedCart,
+      itemCounter,
+      total,
     };
   }
+
   if (action.type === DIMINUISCI_QTY) {
+    const updatedCart = state.cart.map((el) => {
+      if (action.payload === el._id) {
+        return {
+          ...el,
+          qty: el.qty - 1,
+        };
+      }
+      return el;
+    });
+
+    const itemCounter = updatedCart.reduce(
+      (total, item) => total + item.qty,
+      0
+    );
+    const total = updatedCart.reduce(
+      (total, item) => total + item.price * item.qty,
+      0
+    );
+
     return {
       ...state,
-      cart: state.cart.map((el) => {
-        if (action.payload === el._id) {
-          return {
-            ...el,
-            qty: el.qty - 1,
-          };
-        }
-        return { ...el };
-      }),
+      cart: updatedCart,
+      itemCounter,
+      total,
     };
   }
+
   if (action.type === COSTO_TOTALE) {
     return {
       ...state,
