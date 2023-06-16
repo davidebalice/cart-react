@@ -18,7 +18,6 @@ const useFetch = (url) => {
         setIsLoading(false);
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return { isLoading, data, isError };
 };

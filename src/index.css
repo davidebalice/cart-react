@@ -232,7 +232,7 @@ p {
   display: -moz-grid;
   display: -ms-grid;
   display: -webkit-grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.4fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.4fr;
   place-items: center;
 }
 
@@ -263,6 +263,7 @@ p {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
+  width: 100% !important;
 }
 
 .card {

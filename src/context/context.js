@@ -1,16 +1,13 @@
 import React, { useContext, useReducer, useEffect, useState } from "react";
-import axios from "axios";
 import reducer from "./reducer";
 
 import {
   SHOW_CART,
   ADD_CART,
   DELETE_ITEM,
-  AUMENTA_QTY,
-  DIMINUISCI_QTY,
-  SVUOTA_CARRELLO,
-  CONTATORE,
-  COSTO_TOTALE,
+  INCREASE_QTY,
+  DECREASE_QTY,
+  EMPTY_CART,
 } from "./actions";
 
 const AppContext = React.createContext();
@@ -39,15 +36,15 @@ const AppProvider = ({ children }) => {
   };
 
   const addQty = (id) => {
-    return dispatch({ type: AUMENTA_QTY, payload: id });
+    return dispatch({ type: INCREASE_QTY, payload: id });
   };
 
   const dimQty = (id) => {
-    return dispatch({ type: DIMINUISCI_QTY, payload: id });
+    return dispatch({ type: DECREASE_QTY, payload: id });
   };
 
   const deleteAll = () => {
-    return dispatch({ type: SVUOTA_CARRELLO });
+    return dispatch({ type: EMPTY_CART });
   };
 
   useEffect(() => {
@@ -55,8 +52,6 @@ const AppProvider = ({ children }) => {
       type: SHOW_CART,
       payload: state.cart,
     });
-    //dispatch({ type: COSTO_TOTALE });
-    //dispatch({ type: CONTATORE });
   }, []);
 
   return (

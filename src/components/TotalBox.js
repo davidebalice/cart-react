@@ -5,15 +5,13 @@ const TotalBox = () => {
   const { total } = useGlobalContext();
   return (
     <section className="total-section section-center">
-      <div className="card">
+      <div className="card w-100">
         <header className="card-header">
           <h4> Cart </h4>
         </header>
-        <hr />
         <div className="card-content">
           <h4>{formatNumber(total)}</h4>
         </div>
-        <hr />
         <footer className="card-footer">
           <button className="btn btn-selector">CheckOut</button>
         </footer>

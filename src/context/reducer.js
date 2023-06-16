@@ -2,11 +2,11 @@ import {
   SHOW_CART,
   ADD_CART,
   DELETE_ITEM,
-  AUMENTA_QTY,
-  DIMINUISCI_QTY,
-  SVUOTA_CARRELLO,
-  CONTATORE,
-  COSTO_TOTALE,
+  INCREASE_QTY,
+  DECREASE_QTY,
+  EMPTY_CART,
+  COUNTER,
+  COST_TOTAL,
 } from "./actions";
 
 const reducer = (state, action) => {
@@ -42,13 +42,21 @@ const reducer = (state, action) => {
   }
 
   if (action.type === DELETE_ITEM) {
+    const updatedCart = state.cart.filter((el) => el._id !== action.payload);
+    
     return {
       ...state,
-      cart: state.cart.filter((el) => el._id !== action.payload),
+      cart: updatedCart,
+      itemCounter: updatedCart.reduce((total, item) => {
+        return total + item.qty;
+      }, 0),
+      total: updatedCart.reduce((total, item) => {
+        return total + item.price * item.qty;
+      }, 0),
     };
   }
 
-  if (action.type === AUMENTA_QTY) {
+  if (action.type === INCREASE_QTY) {
     const updatedCart = state.cart.map((el) => {
       if (action.payload === el._id) {
         return {
@@ -76,7 +84,7 @@ const reducer = (state, action) => {
     };
   }
 
-  if (action.type === DIMINUISCI_QTY) {
+  if (action.type === DECREASE_QTY) {
     const updatedCart = state.cart.map((el) => {
       if (action.payload === el._id) {
         return {
@@ -104,7 +112,7 @@ const reducer = (state, action) => {
     };
   }
 
-  if (action.type === COSTO_TOTALE) {
+  if (action.type === COST_TOTAL) {
     return {
       ...state,
       total: state.cart.reduce((total, item) => {
@@ -112,7 +120,7 @@ const reducer = (state, action) => {
       }, 0),
     };
   }
-  if (action.type === CONTATORE) {
+  if (action.type === COUNTER) {
     return {
       ...state,
       itemCounter: state.cart.reduce((total, item) => {
@@ -120,10 +128,13 @@ const reducer = (state, action) => {
       }, 0),
     };
   }
-  if (action.type === SVUOTA_CARRELLO) {
+
+  if (action.type === EMPTY_CART) {
     return {
       ...state,
       cart: [],
+      itemCounter: 0,
+      total: 0,
     };
   }
   return state;

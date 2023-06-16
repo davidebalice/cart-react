@@ -46,6 +46,7 @@ const Cart = () => {
         <h6 className="prd-name">Description</h6>
         <h6>Qty</h6>
         <h6>Price</h6>
+        <h6>Total</h6>
         <button className="btn icon-btn" onClick={deleteAllHandle}>
           <MdRemoveShoppingCart className="icon minus-icon" />
         </button>

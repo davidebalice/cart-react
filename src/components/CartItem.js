@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { useGlobalContext } from "../context/context";
@@ -15,6 +15,8 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
     setConfirmMsg,
   } = useGlobalContext();
 
+  const [total, setTotal] = useState(price * qty);
+
   const decrease = (id) => {
     if (qty - 1 <= 0) {
       setConfirmMsg("Delete this Item?");
@@ -22,6 +24,7 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
       setShowModal(true);
       setSelectedId(id);
     } else {
+      setTotal((prevTotal) => prevTotal - price);
       return dimQty(id);
     }
   };
@@ -30,14 +33,25 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
     if (qty + 1 > countInStock) {
       return;
     }
+    setTotal((prevTotal) => prevTotal + price);
     return addQty(id);
   };
 
   const deleteHandle = (id) => {
+    setConfirmMsg("Delete this Item?");
     setTypeDelete(1);
     setSelectedId(id);
     setShowModal(id);
   };
+
+  const formattedPrice = price.toLocaleString("it-IT", {
+    style: "currency",
+    currency: "EUR",
+  });
+  const formattedTotal = total.toLocaleString("it-IT", {
+    style: "currency",
+    currency: "EUR",
+  });
 
   return (
     <article className="cart-item">
@@ -58,7 +72,8 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
           </Button>
         </ButtonGroup>
       </div>
-      <p>{price} €</p>
+      <p>{formattedPrice}</p>
+      <p>{formattedTotal}</p>
       <button className="btn icon-btn" onClick={() => deleteHandle(_id)}>
         <MdDelete className="icon minus-icon trashIcon" />
       </button>
