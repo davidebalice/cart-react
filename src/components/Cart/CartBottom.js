@@ -1,6 +1,6 @@
 import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
-import { useGlobalContext } from "../context/context";
+import { useGlobalContext } from "../../context/context";
 import { NavLink } from "react-router-dom";
 import classes from "./CartBottom.module.css";
 

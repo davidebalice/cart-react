@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Cart from "../components/Cart";
-import TotalBox from "../components/TotalBox";
+import Navbar from "../components/Navbar/Navbar";
+import Cart from "../components/Cart/Cart";
+import TotalBox from "../components/Cart/TotalBox";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
 
@@ -24,8 +24,6 @@ const CartPage = () => {
       ) : (
         <div className="center-item text-center">
           <h3>The cart is empty</h3>
-          <br />
-          <h4>Reload page to view cart</h4>
         </div>
       )}
       {total > 0 && <TotalBox />}

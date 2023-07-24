@@ -267,7 +267,6 @@ p {
 }
 
 .card {
-  padding: 1rem;
   display: grid;
   display: -moz-grid;
   display: -ms-grid;

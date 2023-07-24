@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { HiShoppingCart } from "react-icons/hi";
-import logo from "../assets/logo_white.png";
-import { useGlobalContext } from "../context/context";
+import logo from "../../assets/logo_white.png";
+import { useGlobalContext } from "../../context/context";
 import { NavLink } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import classes from "./Navbar.module.css";

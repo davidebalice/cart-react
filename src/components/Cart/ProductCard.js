@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { HiShoppingCart } from "react-icons/hi";
-import { useGlobalContext } from "../context/context";
+import { useGlobalContext } from "../../context/context";
 import classes from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {

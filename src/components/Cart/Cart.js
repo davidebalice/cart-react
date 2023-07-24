@@ -2,7 +2,8 @@ import React from "react";
 import { MdRemoveShoppingCart } from "react-icons/md";
 import CartItem from "./CartItem";
 import ConfirmModal from "./ConfirmModal";
-import { useGlobalContext } from "../context/context";
+import { useGlobalContext } from "../../context/context";
+import classes from "./CartBottom.module.css";
 
 const Cart = () => {
   const {
@@ -35,7 +36,7 @@ const Cart = () => {
   };
 
   return (
-    <section className="section-center" style={{ marginTop: "2rem" }}>
+    <section className={`${classes.cartContainer} section-center`}>
       <ConfirmModal
         showModal={showModal}
         msg={confirmMsg}

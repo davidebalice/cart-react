@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BiPlus, BiMinus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import { useGlobalContext } from "../context/context";
+import { useGlobalContext } from "../../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 

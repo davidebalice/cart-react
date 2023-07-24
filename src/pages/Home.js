@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import CartBottom from "../components/CartBottom";
-import ProductContainer from "../components/ProductContainer";
+import Navbar from "../components/Navbar/Navbar";
+import CartBottom from "../components/Cart/CartBottom";
+import ProductContainer from "../components/Cart/ProductContainer";
 import { useGlobalContext } from "../context/context";
 
 const Home = () => {
