@@ -19,7 +19,7 @@ const PaymentPage = () => {
   return (
     <div>
       <Navbar />
-      <Step step={1} />
+      <Step step={4} />
       <Payment />
     </div>
   );

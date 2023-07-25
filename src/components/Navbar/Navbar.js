@@ -53,6 +53,7 @@ const Navbar = () => {
               </div>
             )}
           </div>{" "}
+          <NavLink to="/logout">logout</NavLink>
         </NavLink>
       </header>
     </nav>

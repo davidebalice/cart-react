@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import NotLogged from "../Checkout/NotLogged";
 import { AuthContext } from "../../context/authContext";
 
 const Summary = () => {
@@ -6,7 +7,7 @@ const Summary = () => {
   return (
     <div>
       summary: {isLoggedIn}
-      {isLoggedIn ? "loggato" : "non loggato"}
+      {isLoggedIn ? <div>loggato 1111</div> : <NotLogged />}
     </div>
   );
 };

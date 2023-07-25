@@ -117,11 +117,17 @@ input[type="submit"]:hover {
   z-index: 10;
   text-align: center;
 }
+.stepTitle {
+  font-size: 13px;
+  text-align: center;
+  width: 150px;
+  margin-left:-50px;
+}
 .progress {
   -webkit-appearance: none;
   position: absolute;
   z-index: -1;
-  width: 95%;
+  width: 94%;
   height: 7px;
   margin-left: 18px;
   margin-bottom: 18px;
@@ -146,9 +152,17 @@ input[type="submit"]:hover {
   background: #3992c2 !important;
   transition: background 0.4s;
   border: none !important;
-  padding:4px
+  padding: 8px;
 }
 .button:hover {
   background: #57a3cc;
 }
 
+.info {
+  color: #777;
+  border: 1px dashed #777;
+  font-size: 12px;
+  width: 88%;
+  padding: 12px;
+  margin-bottom: 28px;
+}

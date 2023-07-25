@@ -41,7 +41,7 @@ const Step = ({ step }) => {
               >
                 1
               </button>
-              <div className={classes.stepTitle}>First Step</div>
+              <div className={classes.stepTitle}>Login</div>
             </div>
             <div className="step-item">
               <button
@@ -51,7 +51,7 @@ const Step = ({ step }) => {
               >
                 2
               </button>
-              <div className={classes.stepTitle}>Second Step</div>
+              <div className={classes.stepTitle}>Summary</div>
             </div>
             <div className="step-item">
               <button
@@ -61,7 +61,7 @@ const Step = ({ step }) => {
               >
                 3
               </button>
-              <div className="step-title">Third Step</div>
+              <div className={classes.stepTitle}>Shipping data</div>
             </div>
             <div className="step-item">
               <button
@@ -71,7 +71,7 @@ const Step = ({ step }) => {
               >
                 4
               </button>
-              <div className="step-title">Payment</div>
+              <div className={classes.stepTitle}>Payment</div>
             </div>
           </div>
         </div>

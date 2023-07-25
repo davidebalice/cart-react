@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 import classes from "./Checkout.module.css";
 import Button from "react-bootstrap/Button";
+import {CgLogIn} from "react-icons/cg";
 const API_URL = "https://www.aroundweb.it/davidebalice.dev/data/users.json";
 
 const Login = () => {
@@ -43,12 +44,6 @@ const Login = () => {
     }
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUsername("");
-    setPassword("");
-  };
-
   return (
     <div className={classes.page}>
       <div className={classes.loginContainer}>
@@ -58,6 +53,14 @@ const Login = () => {
           ) : (
             <>
               <h1 className={classes.title}>Login</h1>
+
+              <div className={classes.info}>
+                Use this data for test
+                <br />
+                username: user
+                <br />
+                password: 12345678
+              </div>
 
               <div className="input-container">
                 <label className={classes.label}>Username</label>
@@ -84,7 +87,7 @@ const Login = () => {
               <div className={classes.spacer}></div>
               <div className="button-container">
                 <Button onClick={handleLogin} className={classes.button}>
-                  Login
+                  <CgLogIn className="icon nav-icon" /> Login
                 </Button>
               </div>
             </>
