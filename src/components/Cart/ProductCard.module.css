@@ -7,7 +7,7 @@
 }
 .cardButton {
   text-transform: lowercase;
-  background: #3992c2;
+  background: #3992c2 !important;
   transition: background 0.4s;
   border: none !important;
 }

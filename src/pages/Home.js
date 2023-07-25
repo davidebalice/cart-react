@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import CartBottom from "../components/Cart/CartBottom";
+import Slideshow from "../components/Slideshow/Slideshow";
+import Footer from "../components/Footer/Footer";
 import ProductContainer from "../components/Cart/ProductContainer";
 import { useGlobalContext } from "../context/context";
 
@@ -18,7 +20,9 @@ const Home = () => {
     <div>
       <Navbar />
       {isVisible && <CartBottom />}
+      <Slideshow />
       <ProductContainer />
+      <Footer />
     </div>
   );
 };

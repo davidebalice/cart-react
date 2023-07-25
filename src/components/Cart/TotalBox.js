@@ -23,7 +23,7 @@ const TotalBox = () => {
 
         <div className={classes.totalFooter}>
           <NavLink to="/login">
-            <Button variant="primary" className={classes.checkout}>
+            <Button variant="primary" className={classes.checkoutButton}>
               Checkout
             </Button>
           </NavLink>

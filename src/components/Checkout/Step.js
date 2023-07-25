@@ -47,7 +47,7 @@ const Step = ({ step }) => {
               <button
                 className={`${classes.stepButton} text-center collapsed`}
                 type="button"
-                aria-expanded="false"
+                aria-expanded={step >= 2 ? true : false}
               >
                 2
               </button>
@@ -57,7 +57,7 @@ const Step = ({ step }) => {
               <button
                 className={`${classes.stepButton} text-center collapsed`}
                 type="button"
-                aria-expanded="false"
+                aria-expanded={step >= 3 ? true : false}
               >
                 3
               </button>
@@ -67,7 +67,7 @@ const Step = ({ step }) => {
               <button
                 className={`${classes.stepButton} text-center collapsed`}
                 type="button"
-                aria-expanded="false"
+                aria-expanded={step >= 4 ? true : false}
               >
                 4
               </button>

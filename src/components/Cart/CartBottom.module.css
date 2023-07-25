@@ -63,7 +63,6 @@
   max-width: 1200px;
 }
 .totalContainer {
-  
 }
 .totalBox {
   display: flex;
@@ -80,10 +79,11 @@
   padding: 10px 0px 30px 0px;
 }
 .checkoutButton {
-  text-transform: lowercase;
-  background: #3992c2;
+  text-transform: lowercase !important;
+  background: #3992c2 !important;
   transition: background 0.4s;
   border: none !important;
+  padding:4px
 }
 .checkoutButton:hover {
   background: #57a3cc;
