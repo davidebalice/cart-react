@@ -1,6 +1,6 @@
 import { Carousel } from "react-responsive-carousel";
 import classes from "./Slideshow.module.css";
-import Text from "./Text";
+import Text from "../Text/Text";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Slideshow = () => {
@@ -12,7 +12,6 @@ const Slideshow = () => {
 
   return (
     <div className={classes.slideContainer}>
-      <Text>aaaa</Text>
       <Carousel
         showThumbs={false}
         infiniteLoop={true}
