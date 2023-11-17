@@ -190,6 +190,11 @@ p {
   gap: 0.2rem;
 }
 
+.nav-cart-wrapper{
+  display:flex;
+  gap:20px;
+}
+
 .cart-counter {
   border-radius: 50%;
   height: 16px;
@@ -514,4 +519,10 @@ p {
 .logo {
   width: 150px;
   height: auto;
+}
+
+.logout{
+  color:#fff;
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -5,6 +5,7 @@ import { useGlobalContext } from "../../context/context";
 import classes from "./Checkout.module.css";
 
 const Payment = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   const { cart, total } = useGlobalContext();
   const { shippingData } = useContext(AuthContext);
 
@@ -20,7 +21,14 @@ const Payment = () => {
   return (
     <div className={classes.page}>
       <div className={classes.pageContainer}>
-        <h2 className={classes.titleSection}>Payment</h2>Payment {name} {surname} {total}
+        {isLoggedIn ? (
+          <>
+            <h2 className={classes.titleSection}>Payment</h2>Payment {name}{" "}
+            {surname} {total}
+          </>
+        ) : (
+          <NotLogged />
+        )}
       </div>
     </div>
   );

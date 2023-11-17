@@ -7,7 +7,7 @@ import {CgLogIn} from "react-icons/cg";
 const API_URL = "https://www.aroundweb.it/davidebalice.dev/data/users.json";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [error, setError] = useState("");
@@ -19,24 +19,24 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
-        throw new Error("Credenziali non valide");
+        throw new Error("Invalid credentials");
       }
 
       const data = await response.json();
 
       const validCredentials = data.find(
-        (user) => user.username === username && user.password === password
+        (user) => user.email === email && user.password === password
       );
 
       if (validCredentials) {
         setIsLoggedIn(true);
         setError("");
       } else {
-        throw new Error("Credenziali non valide");
+        throw new Error("Invalid credentials");
       }
     } catch (error) {
       setError(error.message);
@@ -57,7 +57,7 @@ const Login = () => {
               <div className={classes.info}>
                 Use this data for test
                 <br />
-                username: user
+                email: mario@rossi.it
                 <br />
                 password: 12345678
               </div>
@@ -68,8 +68,8 @@ const Login = () => {
                   type="text"
                   placeholder="Username"
                   className={classes.input}
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>

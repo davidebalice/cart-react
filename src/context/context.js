@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
   const [selectedId, setSelectedId] = useState(0);
   const [typeDelete, setTypeDelete] = useState(1);
   const [confirmMsg, setConfirmMsg] = useState("");
+  const stripePkKey = "aaa";
 
   const deleteItem = (id) => {
     return dispatch({ type: DELETE_ITEM, payload: id });
@@ -71,6 +72,7 @@ const AppProvider = ({ children }) => {
         setTypeDelete,
         confirmMsg,
         setConfirmMsg,
+        stripePkKey,
       }}
     >
       {children}

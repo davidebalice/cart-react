@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import logo from "../../assets/logo_white.png";
+import { AuthContext } from "../../context/authContext";
 import { useGlobalContext } from "../../context/context";
 import { NavLink } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   const { isLoading, itemCounter } = useGlobalContext();
   const cartRef = useRef(null);
 
@@ -45,15 +47,17 @@ const Navbar = () => {
           </NavLink>
         </Row>
         <NavLink to="/cart" className={classes.NavLink}>
-          <div className="nav-cart">
-            <HiShoppingCart className={classes.cartIcon + " icon nav-icon"} />
-            {!isLoading && (
-              <div ref={cartRef} className={classes.cartNum}>
-                {itemCounter}
-              </div>
-            )}
-          </div>{" "}
-          <NavLink to="/logout">logout</NavLink>
+          <div className="nav-cart-wrapper">
+            <div className="nav-cart">
+              <HiShoppingCart className={classes.cartIcon + " icon nav-icon"} />
+              {!isLoading && (
+                <div ref={cartRef} className={classes.cartNum}>
+                  {itemCounter}
+                </div>
+              )}
+            </div>{" "}
+            {isLoggedIn && <NavLink to="/logout" className="logout">Logout</NavLink>}
+          </div>
         </NavLink>
       </header>
     </nav>
