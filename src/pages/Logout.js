@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
 import { AuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/context";
+import Footer from "../components/Footer/Footer";
 
 const LogoutPage = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -20,12 +21,15 @@ const LogoutPage = () => {
 
   if (isLoading) {
     return (
-      <div>
-        <Navbar />
-        <div className="center-item">
-          <Loading />
+      <>
+        <div>
+          <Navbar />
+          <div className="center-item">
+            <Loading />
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
   return <div></div>;

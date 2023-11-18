@@ -3,7 +3,7 @@ import { MdRemoveShoppingCart } from "react-icons/md";
 import CartItem from "./CartItem";
 import ConfirmModal from "./ConfirmModal";
 import { useGlobalContext } from "../../context/context";
-import classes from "./CartBottom.module.css";
+import classes from "./Cart.module.css";
 
 const Cart = () => {
   const {
@@ -42,6 +42,7 @@ const Cart = () => {
         msg={confirmMsg}
         onConfirm={confirmHandle}
       />
+      <div className={classes.dataContainer}>
       <div className="cart-info">
         <h6>Item</h6>
         <h6 className="prd-name">Description</h6>
@@ -54,10 +55,11 @@ const Cart = () => {
       </div>
       <hr />
       <section className="cart-section">
-        {cart.map((el) => {
-          return <CartItem key={el._id} {...el} />;
+        {cart.map((item) => {
+          return <CartItem key={item._id} {...item} />;
         })}
       </section>
+      </div>
     </section>
   );
 };

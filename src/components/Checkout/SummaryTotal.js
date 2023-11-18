@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../../context/context";
 import formatNumber from "../../utils/formatNumber";
-import classes from "../Cart/CartBottom.module.css";
+import classes from "../Cart/Cart.module.css";
 import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 

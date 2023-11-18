@@ -1,5 +1,4 @@
 import React from "react";
-import { useGlobalContext } from "../../context/context";
 import classes from "./Checkout.module.css";
 
 const Step = ({ step }) => {
@@ -71,7 +70,7 @@ const Step = ({ step }) => {
               >
                 4
               </button>
-              <div className={classes.stepTitle}>Payment</div>
+              <div className={classes.stepTitle}>Confirm</div>
             </div>
           </div>
         </div>

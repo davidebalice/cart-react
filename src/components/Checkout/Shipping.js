@@ -23,7 +23,7 @@ const Shipping = () => {
     };
 
     setShippingData(data);
-    navigate("/payment");
+    navigate("/confirm");
   };
 
   return (

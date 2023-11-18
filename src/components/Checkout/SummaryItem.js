@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { BiPlus, BiMinus } from "react-icons/bi";
-import { MdDelete } from "react-icons/md";
 import { useGlobalContext } from "../../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -55,22 +53,17 @@ const SummaryItem = ({ _id, image, name, price, countInStock, qty }) => {
 
   return (
     <article className="cart-item">
-      <div className="img-container">
+      <div className="imgContainer">
         <img src={image} alt={name} className="img" />
       </div>
-      <p className="prd-name">{name}</p>
+      <p className="productName">{name}</p>
       <div className="qty-selector">
         <ButtonGroup>
-         
-        
-            <p> {qty} </p>
-         
-         
+          <p> {qty} </p>
         </ButtonGroup>
       </div>
-      <p>{formattedPrice}</p>
+      <p className="center">{formattedPrice}</p>
       <p>{formattedTotal}</p>
-    
     </article>
   );
 };

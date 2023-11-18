@@ -58,7 +58,7 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
       <div className="img-container">
         <img src={image} alt={name} className="img" />
       </div>
-      <p className="prd-name">{name}</p>
+      <p className="productName">{name}</p>
       <div className="qty-selector">
         <ButtonGroup>
           <Button className="plusButton" onClick={() => add(_id)}>

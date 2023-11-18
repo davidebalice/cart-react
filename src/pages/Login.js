@@ -3,6 +3,7 @@ import Step from "../components/Checkout/Step";
 import Login from "../components/Checkout/Login";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
+import Footer from "../components/Footer/Footer";
 
 const LoginPage = () => {
   const { isLoading } = useGlobalContext();
@@ -17,11 +18,14 @@ const LoginPage = () => {
     );
   }
   return (
-    <div>
-      <Navbar />
-      <Step step={1} />
-      <Login />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        <Step step={1} />
+        <Login />
+      </div>
+      <Footer />
+    </>
   );
 };
 

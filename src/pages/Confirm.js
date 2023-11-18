@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar/Navbar";
 import Step from "../components/Checkout/Step";
-import Payment from "../components/Checkout/Payment";
+import Confirm from "../components/Checkout/Confirm";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
+import Footer from "../components/Footer/Footer";
 
-const PaymentPage = () => {
+const ConfirmPage = () => {
   const { isLoading } = useGlobalContext();
   if (isLoading) {
     return (
@@ -17,12 +18,15 @@ const PaymentPage = () => {
     );
   }
   return (
-    <div>
-      <Navbar />
-      <Step step={4} />
-      <Payment />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        <Step step={4} />
+        <Confirm />
+      </div>
+      <Footer />
+    </>
   );
 };
 
-export default PaymentPage;
+export default ConfirmPage;

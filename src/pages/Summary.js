@@ -3,6 +3,7 @@ import Step from "../components/Checkout/Step";
 import Summary from "../components/Checkout/Summary";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
+import Footer from "../components/Footer/Footer";
 
 const SummaryPage = () => {
   const { isLoading } = useGlobalContext();
@@ -17,11 +18,14 @@ const SummaryPage = () => {
     );
   }
   return (
-    <div>
-      <Navbar />
-      <Step step={2} />
-      <Summary />
-    </div>
+    <>
+      <div>
+        <Navbar />
+        <Step step={2} />
+        <Summary />
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import { useGlobalContext } from "../../context/context";
 import { NavLink } from "react-router-dom";
-import classes from "./CartBottom.module.css";
+import classes from "./Cart.module.css";
 
 const CartBottom = () => {
   const { itemCounter } = useGlobalContext();

@@ -1,6 +1,6 @@
 .page {
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 340px);
   background-color: #f8f9fd;
 }
 
@@ -85,7 +85,7 @@ input[type="submit"]:hover {
   font-size: 25px;
   margin-bottom: 20px;
   text-align: center;
-  margin-bottom:70px;
+  margin-bottom: 70px;
 }
 
 .input-container {
@@ -178,4 +178,24 @@ input[type="submit"]:hover {
   width: 88%;
   padding: 12px;
   margin-bottom: 28px;
+}
+
+.shippingdataRow {
+  display: flex;
+  font-size: 14px;
+}
+
+.shippingdataCol1 {
+  font-weight: bold;
+  width: 130px;
+}
+
+.dataContainer {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 1200px;
+  margin:0 auto
 }

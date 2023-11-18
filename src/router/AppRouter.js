@@ -5,7 +5,7 @@ import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import Summary from "../pages/Summary";
 import Shipping from "../pages/Shipping";
-import Payment from "../pages/Payment";
+import Confirm from "../pages/Confirm";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/summary" element={<Summary />} />
         <Route path="/shipping" element={<Shipping />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/confirm" element={<Confirm />} />
       </Routes>
     </Router>
   );

@@ -3,6 +3,7 @@ import Cart from "../components/Cart/Cart";
 import TotalBox from "../components/Cart/TotalBox";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
+import Footer from "../components/Footer/Footer";
 
 const CartPage = () => {
   const { isLoading, total, cart } = useGlobalContext();
@@ -17,17 +18,20 @@ const CartPage = () => {
     );
   }
   return (
-    <div>
-      <Navbar />
-      {cart.length > 0 ? (
-        <Cart />
-      ) : (
-        <div className="center-item text-center">
-          <h3>The cart is empty</h3>
-        </div>
-      )}
-      {total > 0 && <TotalBox />}
-    </div>
+    <>
+      <div className="pageWrapper">
+        <Navbar />
+        {cart.length > 0 ? (
+          <Cart />
+        ) : (
+          <div className="center-item text-center">
+            <h3>The cart is empty</h3>
+          </div>
+        )}
+        {total > 0 && <TotalBox />}
+      </div>
+      <Footer />
+    </>
   );
 };
 

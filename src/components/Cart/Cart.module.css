@@ -62,7 +62,9 @@
   width: 100%;
   max-width: 1200px;
 }
-.totalContainer {
+.totalContainer{
+  border-radius: 6px;
+  overflow: hidden;
 }
 .totalBox {
   display: flex;
@@ -70,7 +72,8 @@
   justify-content: space-between;
   padding: 20px;
   border-bottom: 1px solid #ddd;
-  background: #f1f1f1 !important;
+  background: #3992c2 !important;
+  color:#fff;
 }
 .totalFooter {
   background: #fff;
@@ -83,8 +86,17 @@
   background: #3992c2 !important;
   transition: background 0.4s;
   border: none !important;
-  padding:4px
+  padding: 4px;
 }
 .checkoutButton:hover {
   background: #57a3cc;
+}
+.dataContainer {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

@@ -23,7 +23,7 @@ const ProductContainer = ({ product }) => {
   const rows = [products.slice(0, 4), products.slice(4, 8)];
 
   return (
-    <Container>
+    <Container className="mb-5">
       {rows.map((row, rowIndex) => (
         <Row key={rowIndex}>
           {row.map((item, colIndex) => (
