@@ -158,7 +158,7 @@ p {
   box-shadow: var(--light-shadow);
 }
 
-.nav-header {
+.navHeader {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -168,7 +168,7 @@ p {
   -ms-justify-content: space-between;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
+  width: 98%;
   margin: auto;
 }
 
@@ -181,18 +181,23 @@ p {
   padding: 10px;
 }
 
-.nav-cart {
+.navCart {
   display: grid;
   display: -moz-grid;
   display: -ms-grid;
   display: -webkit-grid;
   grid-template-columns: auto auto;
   gap: 0.2rem;
+  border-radius:30px;
+  background:#f1f1f1;
+  padding:8px 16px;
+  box-shadow: 0px 1px 3px -3px rgb(0, 0, 0,0.95) inset;
 }
 
-.nav-cart-wrapper {
+.navCartWrapper {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .cart-counter {
@@ -255,6 +260,26 @@ p {
 
 .cart-item .productName {
   font-size: 0.65rem;
+}
+
+.imgContainer{
+  border:1px solid #ddd
+}
+
+.productNameNav {
+  font-size: 13px;
+  font-weight:bold;
+  width: 100%;
+}
+
+.qtyNav {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.qtyContainerNav{
+  display: flex;
+  justify-content: space-between;
 }
 
 .qty-selector {
@@ -334,15 +359,40 @@ p {
   display: -webkit-flex;
   display: -ms-flex;
   align-items: center;
-  box-shadow: var(--light-shadow);
-  border-radius: var(--radius);
+  border:1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom:12px
+}
+
+.cartItemNav{
+  display:flex;
+  width:100%;
+  gap:12px;
+  margin-bottom: 8px;
+}
+
+.imgContainerNav {
+  height: 60px;
+  width: 60px;
+  min-width: 60px;
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  align-items: center;
+  border:1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 8px;
 }
 
 .img {
-  border-radius: inherit;
   margin: auto;
-  width: 95%;
+  width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 992px) {
@@ -531,4 +581,9 @@ p {
 .pageWrapper{
   background: #f8f9fd;
   min-height: calc(100vh - 64px);
+}
+
+.form-input{
+  background: #f8f9fd !important;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1) !important; 
 }

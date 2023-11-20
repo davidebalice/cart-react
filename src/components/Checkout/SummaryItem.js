@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import formatNumber from "../../utils/formatNumber";
 
 const SummaryItem = ({ _id, image, name, price, countInStock, qty }) => {
   const {
@@ -42,14 +43,8 @@ const SummaryItem = ({ _id, image, name, price, countInStock, qty }) => {
     setShowModal(id);
   };
 
-  const formattedPrice = price.toLocaleString("it-IT", {
-    style: "currency",
-    currency: "EUR",
-  });
-  const formattedTotal = total.toLocaleString("it-IT", {
-    style: "currency",
-    currency: "EUR",
-  });
+  const formattedPrice = formatNumber(price);
+  const formattedTotal = formatNumber(total);
 
   return (
     <article className="cart-item">
@@ -62,8 +57,8 @@ const SummaryItem = ({ _id, image, name, price, countInStock, qty }) => {
           <p> {qty} </p>
         </ButtonGroup>
       </div>
-      <p className="center">{formattedPrice}</p>
-      <p>{formattedTotal}</p>
+      <p className="center">€ {formattedPrice}</p>
+      <p>€ {formattedTotal}</p>
     </article>
   );
 };

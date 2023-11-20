@@ -27,7 +27,7 @@ const ProductContainer = ({ product }) => {
       {rows.map((row, rowIndex) => (
         <Row key={rowIndex}>
           {row.map((item, colIndex) => (
-            <Col key={colIndex} className="text-center">
+            <Col xs={12} sm={6} md={4} lg={3} key={colIndex} className="text-center">
               <ProductCard product={item} key={item.id} />
             </Col>
           ))}

@@ -17,7 +17,7 @@ const SummaryTotal = () => {
             <h4> Total </h4>
           </div>
           <div className="card-content">
-            <h4>{formatNumber(total)}</h4>
+            <h4>€ {formatNumber(total)}</h4>
           </div>
         </div>
 

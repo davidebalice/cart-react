@@ -3,10 +3,11 @@ import NotLogged from "../Checkout/NotLogged";
 import { useGlobalContext } from "../../context/context";
 import { AuthContext } from "../../context/authContext";
 import classes from "./Checkout.module.css";
+import classes2 from "../Cart/Cart.module.css";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const Shipping = () => {
-  const { cart, total } = useGlobalContext();
   const { isLoggedIn, shippingData, setShippingData } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -33,6 +34,8 @@ const Shipping = () => {
           <>
             <h2 className={classes.titleSection}>Shipping details</h2>
 
+            <div className={`${classes.dataContainer} mb-5`}>
+
             <form onSubmit={handleSubmit}>
               <div class="row">
                 <div class="col-md-6">
@@ -42,7 +45,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control form-input"
                       id="name"
                       name="name"
                       required
@@ -54,7 +57,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control form-input"
                       id="surname"
                       name="surname"
                       required
@@ -66,7 +69,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control form-input"
                       id="address"
                       name="address"
                       required
@@ -81,7 +84,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control form-input"
                       id="city"
                       name="city"
                       required
@@ -93,7 +96,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="email"
-                      class="form-control"
+                      class="form-control form-input"
                       id="email"
                       name="email"
                       required
@@ -105,7 +108,7 @@ const Shipping = () => {
                     </label>
                     <input
                       type="tel"
-                      class="form-control"
+                      class="form-control form-input"
                       id="tel"
                       name="tel"
                       required
@@ -113,40 +116,13 @@ const Shipping = () => {
                   </div>
                 </div>
               </div>
-
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-check form-check-inline col-12">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      id="checkbox1"
-                      name="shipping"
-                      required
-                    />
-                    <label class="form-check-label" for="checkbox1">
-                      Opzione 1
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline col-12">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      id="checkbox2"
-                      name="shipping"
-                      required
-                    />
-                    <label class="form-check-label" for="checkbox2">
-                      Opzione 2
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                Invia
-              </button>
+              <div style={{textAlign:'center',padding:'40px'}}>
+                <Button type="submit" variant="primary" className={classes2.checkoutButton}>
+                  Continue
+                </Button> 
+             </div>
             </form>
+            </div>
           </>
         ) : (
           <NotLogged />

@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className={classes.page}>
-      <div className={classes.loginContainer}>
+      <div className={`${classes.loginContainer} mb-5`}>
         <div className={classes.loginForm}>
           {isLoggedIn ? (
             <Navigate to="/summary" />

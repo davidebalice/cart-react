@@ -1,12 +1,12 @@
 .cartIcon {
   font-size: 26px !important;
-  color: #fff;
+  color: #333;
   margin-top: 2px;
   margin-right: 2px;
 }
 .cartNum {
-  color: #3992c2;
-  background: #fff;
+  color: #fff;
+  background: #3992c2;
   width: 30px;
   height: 30px;
   font-weight: bold;
@@ -18,6 +18,12 @@
 }
 .NavLink {
   text-decoration: none !important;
+}
+.NavLinkCart {
+  text-decoration: none !important;
+  align-items: center;
+  display: flex;
+  height: 78px
 }
 .home {
   color: #fff !important;
@@ -54,4 +60,33 @@
 
 .cartZoom {
   animation: zoomIn 0.2s;
+}
+
+.navCart{
+  background-color: #fff;
+  position: fixed;
+  top:80px;
+  right: -300px;
+  border:1px solid #ddd;
+  transition: all 0.3s ease-in-out; 
+  opacity:0;
+  padding:20px;
+  width:300px;
+  box-shadow: 2px 3px 5px rgba(5, 6, 6, 0.2);
+  z-index:100
+}
+
+.navCartVisible{
+  opacity:1;
+  right:0px
+}
+
+.navCartTotal{
+  padding:6px;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top:1px solid #ccc;
+  margin-top:20px;
+  padding-top:20px
 }

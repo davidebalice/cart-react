@@ -9,7 +9,7 @@ const TotalBox = () => {
   const { total } = useGlobalContext();
   return (
     <section
-      className={`${classes.cartContainer} total-section section-center`}
+      className={`${classes.cartContainer} total-section section-center mb-5`}
     >
       <div className={`${classes.totalContainer} card w-100`}>
         <div className={classes.totalBox}>
@@ -17,7 +17,7 @@ const TotalBox = () => {
             <h4> Total </h4>
           </div>
           <div className="card-content">
-            <h4>{formatNumber(total)}</h4>
+            <h4>€ {formatNumber(total.toFixed(2))}</h4>
           </div>
         </div>
 

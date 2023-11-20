@@ -1,6 +1,6 @@
 {
-  "name": "cart-omar",
-  "version": "0.1.0",
+  "name": "react-cart",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@stripe/react-stripe-js": "^2.3.2",

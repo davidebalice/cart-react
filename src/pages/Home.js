@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      {isVisible && <CartBottom />}
+      <CartBottom isVisible={isVisible} />
       <Slideshow />
       <Text />
       <ProductContainer />

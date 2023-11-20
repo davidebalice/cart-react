@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { useGlobalContext } from "../../context/context";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import formatNumber from "../../utils/formatNumber";
 
 const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
   const {
@@ -44,18 +45,12 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
     setShowModal(id);
   };
 
-  const formattedPrice = price.toLocaleString("it-IT", {
-    style: "currency",
-    currency: "EUR",
-  });
-  const formattedTotal = total.toLocaleString("it-IT", {
-    style: "currency",
-    currency: "EUR",
-  });
+  const formattedPrice = formatNumber(price);
+  const formattedTotal = formatNumber(total);
 
   return (
     <article className="cart-item">
-      <div className="img-container">
+      <div>
         <img src={image} alt={name} className="img" />
       </div>
       <p className="productName">{name}</p>
@@ -72,8 +67,8 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
           </Button>
         </ButtonGroup>
       </div>
-      <p>{formattedPrice}</p>
-      <p>{formattedTotal}</p>
+      <p>€ {formattedPrice}</p>
+      <p>€ {formattedTotal}</p>
       <button className="btn icon-btn" onClick={() => deleteHandle(_id)}>
         <MdDelete className="icon minus-icon trashIcon" />
       </button>

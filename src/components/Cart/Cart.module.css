@@ -2,7 +2,7 @@
   background: #fff;
   height: 64px;
   position: fixed;
-  bottom: 0;
+  bottom: -100px;
   left: 0;
   width: 100% !important;
   border-top: 1px solid #ccc;
@@ -12,7 +12,13 @@
   z-index: 10;
   display: flex;
   justify-content: end;
+  transition: bottom 0.3s ease-in-out;
 }
+
+.CartBottomVisible {
+  bottom: 0 !important
+}
+
 .cartIcon {
   font-size: 30px !important;
   color: #fff;
@@ -61,6 +67,7 @@
   margin-top: 30px;
   width: 100%;
   max-width: 1200px;
+  padding:0
 }
 .totalContainer{
   border-radius: 6px;
@@ -86,10 +93,10 @@
   background: #3992c2 !important;
   transition: background 0.4s;
   border: none !important;
-  padding: 4px;
+  padding: 10px 20px !important;
 }
 .checkoutButton:hover {
-  background: #57a3cc;
+  background: #57a3cc !important;
 }
 .dataContainer {
   background: #fff;
