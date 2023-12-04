@@ -69,6 +69,7 @@ const Navbar = () => {
           <div className="navCartWrapper">
             <div className="navCart">
               <HiShoppingCart className={classes.cartIcon + " icon nav-icon"} />
+              <b className={classes.cartNumText}>Cart</b>
               {!isLoading && (
                 <div ref={cartRef} className={classes.cartNum}>
                   {itemCounter}

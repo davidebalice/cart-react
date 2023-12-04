@@ -4,6 +4,7 @@ import Summary from "../components/Checkout/Summary";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
 import Footer from "../components/Footer/Footer";
+import Spacer from "../components/Spacer";
 
 const SummaryPage = () => {
   const { isLoading } = useGlobalContext();
@@ -21,6 +22,7 @@ const SummaryPage = () => {
     <>
       <div>
         <Navbar />
+        <Spacer height={90}/>
         <Step step={2} />
         <Summary />
       </div>

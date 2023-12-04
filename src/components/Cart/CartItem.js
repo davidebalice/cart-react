@@ -56,14 +56,14 @@ const CartItem = ({ _id, image, name, price, countInStock, qty }) => {
       <p className="productName">{name}</p>
       <div className="qty-selector">
         <ButtonGroup>
-          <Button className="plusButton" onClick={() => add(_id)}>
-            <BiPlus className="icon" />
+          <Button className="plusButton" onClick={() => decrease(_id)}>
+            <BiMinus className="icon minus-icon" />
           </Button>
           <Button variant="white" className="qtyButton">
             <p> {qty} </p>
           </Button>
-          <Button className="plusButton" onClick={() => decrease(_id)}>
-            <BiMinus className="icon minus-icon" />
+          <Button className="plusButton" onClick={() => add(_id)}>
+            <BiPlus className="icon" />
           </Button>
         </ButtonGroup>
       </div>

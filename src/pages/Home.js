@@ -5,6 +5,7 @@ import Slideshow from "../components/Slideshow/Slideshow";
 import Text from "../components/Text/Text";
 import Footer from "../components/Footer/Footer";
 import ProductContainer from "../components/Cart/ProductContainer";
+import Spacer from "../components/Spacer";
 import { useGlobalContext } from "../context/context";
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
+      <Spacer height={90}/>
       <CartBottom isVisible={isVisible} />
       <Slideshow />
       <Text />

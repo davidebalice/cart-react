@@ -4,6 +4,7 @@ import Login from "../components/Checkout/Login";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
 import Footer from "../components/Footer/Footer";
+import Spacer from "../components/Spacer";
 
 const LoginPage = () => {
   const { isLoading } = useGlobalContext();
@@ -21,6 +22,7 @@ const LoginPage = () => {
     <>
       <div>
         <Navbar />
+        <Spacer height={90}/>
         <Step step={1} />
         <Login />
       </div>

@@ -4,6 +4,7 @@ import Confirm from "../components/Checkout/Confirm";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
 import Footer from "../components/Footer/Footer";
+import Spacer from "../components/Spacer";
 
 const ConfirmPage = () => {
   const { isLoading } = useGlobalContext();
@@ -21,6 +22,7 @@ const ConfirmPage = () => {
     <>
       <div>
         <Navbar />
+        <Spacer height={90}/>
         <Step step={4} />
         <Confirm />
       </div>

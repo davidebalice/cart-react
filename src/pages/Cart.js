@@ -4,6 +4,7 @@ import TotalBox from "../components/Cart/TotalBox";
 import Loading from "../components/Loading";
 import { useGlobalContext } from "../context/context";
 import Footer from "../components/Footer/Footer";
+import Spacer from "../components/Spacer";
 
 const CartPage = () => {
   const { isLoading, total, cart } = useGlobalContext();
@@ -21,6 +22,7 @@ const CartPage = () => {
     <>
       <div className="pageWrapper">
         <Navbar />
+        <Spacer height={90}/>
         {cart.length > 0 ? (
           <Cart />
         ) : (

@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import { AuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/context";
 import Footer from "../components/Footer/Footer";
+import Spacer from "../components/Spacer";
 
 const LogoutPage = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -24,6 +25,7 @@ const LogoutPage = () => {
       <>
         <div>
           <Navbar />
+          <Spacer height={90}/>
           <div className="center-item">
             <Loading />
           </div>
